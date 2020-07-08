@@ -3,6 +3,8 @@
           package="com.github.shadowsocks"
           tools:ignore="MissingLeanbackSupport">
 
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"
+        tools:ignore="QueryAllPackagesPermission" />
     <uses-permission-sdk-23 android:name="android.permission.CAMERA" />
 
     <uses-feature android:name="android.hardware.touchscreen"
@@ -54,6 +56,8 @@
             android:name=".ScannerActivity"
             android:label="@string/add_profile_methods_scan_qr_code"
             android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.Shadowsocks.Immersive"
+            android:screenOrientation="locked"
             android:excludeFromRecents="true"/>
 
         <activity android:name=".tasker.ConfigActivity"
@@ -85,6 +89,9 @@
             <intent-filter>
                 <action android:name="android.service.quicksettings.action.QS_TILE" />
             </intent-filter>
+            <meta-data
+                android:name="android.service.quicksettings.TOGGLEABLE_TILE"
+                android:value="true" />
         </service>
 
         <receiver android:name=".tasker.ActionListener"
@@ -98,6 +105,6 @@
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-9097031975646651~3330146721"/>
+            android:value="ca-app-pub-3283768469187309~3571758745"/>
     </application>
 </manifest>
